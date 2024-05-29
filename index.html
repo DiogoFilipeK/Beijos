@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oi Vida!</title>
+
+    <style>
+
+        body{
+            background-color: red;
+            
+        }
+
+        .painel{
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            justify-content: center;
+        }
+
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -60px;
+            cursor: pointer;
+            
+        }
+
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        img{
+            margin-top: -25px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="painel">
+        <h1>Oi vida!</h1>
+        <img src="https://i.pinimg.com/originals/ef/96/87/ef9687b36e36605b375b4e9b0cde51db.gif" alt="">
+        <h3>Aceita me dar uns beijos?</h3>
+        <a href="https://www.youtube.com/watch?v=xxtic1sYsAk" target="_blank"><button id="sim">Sim!</button></a>
+        <button onmouseover="fuja()" id="nao">Não!</button>
+        
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaNao.offsetWidth;
+            var maxY = alturaJanela - botaNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random(10,90) * maxX);
+            var aleatorioY = Math.floor(Math.random(10,90) * maxY);
+
+            botaNao.style.left = aleatorioX + "px";
+            botaNao.style.top = aleatorioY + "px";
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
